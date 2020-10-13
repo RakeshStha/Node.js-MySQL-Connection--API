@@ -1,26 +1,16 @@
 const mysql = require("mysql");
 const express = require("express");
+const mysqlConnection = require("./conection");
 const bodyParser = require("body-parser");
+
+const PeopleRoutes = require("./routes/people");
 
 var app = express();
 app.use(bodyParser.json());
 
-var mysqlConnection = mysql.createConnection({
-    host : "localhost",
-    user : "root",
-    password :"password",
-    database : "test",
-    multipleStatements : true,
 
-});
+app.use("/people", PeopleRoutes);
 
-mysqlConnection.connect((err)=>{
-    if(!err){
-        console.log("Connected");
-    }
-    else{
-        console.log("Connection Failed");
-    } 
-})
+
 
 app.listen(3000);
