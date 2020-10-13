@@ -1,4 +1,5 @@
 # Node.js-MySQL-Connection
+Building API for databse connection on MySQL
 Node.js MySQL Connection
 
 * Install pakages express, body-parser, nodemon, mysql, express-handlebars
